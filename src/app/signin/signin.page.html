@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Notes app</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="logo-container">
+    <img class="logo" src="assets/logo.svg">
+  </div>
+  <form [formGroup]="signInForm" id="sign-in">
+    <ion-list>
+      <ion-item>
+        <ion-label position="stacked">Email</ion-label>
+        <ion-input formControlName="email" type="email" placeholder="user@domain.com" name="email"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Password</ion-label>
+        <ion-input formControlName="password" type="password" placeholder="password" name="password"></ion-input>
+      </ion-item>
+      <ion-button [disabled]="!signInForm.valid" expand="block" type="submit" color="secondary" (click)="signIn()">Sign in</ion-button>
+      <ion-item>
+        <ion-label class="sign-up-label">Don't have an account?</ion-label>
+      </ion-item>
+      <div class="button-center">
+        <ion-button type="button" fill="clear" (click)="signUp()">
+          Sign up
+        </ion-button>
+      </div>
+    </ion-list>
+  </form>
+</ion-content>
