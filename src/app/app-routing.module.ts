@@ -30,6 +30,22 @@ const routes: Routes = [
   {
     path: 'add',
     loadChildren: () => import('./add/add.module').then( m => m.AddPageModule)
+  },
+  {
+    path: 'tracker',
+    loadChildren: () => import('./tracker/tracker.module').then( m => m.TrackerPageModule)
+  },
+  {
+    path: 'categories',
+    loadChildren: () => import('./categories/categories.module').then( m => m.CategoriesPageModule)
+  },
+  {
+    path: 'history',
+    loadChildren: () => import('./history/history.module').then( m => m.HistoryPageModule)
+  },
+  {
+    path: 'tabs',
+    loadChildren: () => import('./tabs/tabs.module').then( m => m.TabsPageModule)
   }
 ];
 

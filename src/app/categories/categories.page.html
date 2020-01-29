@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Create a new subject category</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form id="category-form" [formGroup]="categoryForm">
+    <ion-list>
+      <ion-item>
+        <ion-label position="stacked"></ion-label>
+        <ion-input type="text" placeholder="New subject name ..." formControlName="name"></ion-input>
+      </ion-item>
+      <ion-button type="submit" expand="full" [disabled]="!categoryForm.valid" (click)="addCategory()">Add new subject</ion-button>
+    </ion-list>
+  </form>
+  <ion-list>
+    <ion-item *ngFor="let category of categories">{{category.name}}</ion-item>
+  </ion-list>
+</ion-content>
